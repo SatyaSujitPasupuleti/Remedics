@@ -8,10 +8,15 @@ class InitialDiagnosis extends Component{
         }
     }
 
+    componentDidMount(){
+        document.title = "Initial Diagnosis";
+    }
+
     render(){
         return(
             <div>
-                {this.state.props.firstName}
+                <h1>Intial Diagnosis</h1>
+                <p>Hi, what did you want to talk to a doctor for?</p>
             </div>
         )
     }

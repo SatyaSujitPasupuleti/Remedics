@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import InitialDiagnosis from "./InitialDiagnosis";
 
 class General extends Component{
     constructor(props){
@@ -20,12 +19,17 @@ class General extends Component{
         }
     }
 
+    componentDidMount(){
+        document.title = "General Information";
+    }
+
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
     submitGeneral = () => {
-        <InitialDiagnosis {...this.state} />
+        //add to db
+        this.props.history.push("/initial");
     }
 
     render(){
@@ -69,7 +73,7 @@ class General extends Component{
                     <label>
                         Insurance: <input type="text" value={this.state.insuranceProvider} name="insuranceProvider" onChange={this.handleChange} required/>
                     </label>
-                    <input type="submit" />
+                    <input type="submit" value="Submit"/>
                 </form>
             </div>
         )
