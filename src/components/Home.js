@@ -1,29 +1,27 @@
 import React, { Component } from "react";
 
-class Home extends Component{
+class Returning extends Component{
 
     componentDidMount(){
         document.title = "Home";
     }
 
-    returning = () => {
-        this.props.history.push("/initialDiagnosis")
+    doctor = () => {
+        this.props.history.push("/")
     }
 
-    newPatient = () => {
-        this.props.history.push("/general");
+    patient = () => {
+        this.props.history.push("/returning");
     }
     
     render(){
         return(
             <div>
-                <h1>Hello there!</h1>
-                <p>Remedics would like you to fill out this form. It will help us with properly diagnosing the issues that you may have.</p>
-                <p>Before we start, are you a returning patient?</p>
-                <button onClick={this.returning}>Yes</button> <button onClick={this.newPatient}>No</button>
+                <p>Hello, it is a pleasure to meet you. Before we start, which one are you?</p>
+                <button onClick={this.doctor}>Doctor</button> <button onClick={this.patient}>Patient</button>
             </div>
         )
     }
 }
 
-export default Home;
+export default Returning;
