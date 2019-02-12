@@ -17,8 +17,7 @@ class Returning extends Component{
     render(){
         return(
             <div>
-                <p>Hello, it is a pleasure to meet you. Before we start, which one are you?</p>
-                <button onClick={this.doctor}>Doctor</button> <button onClick={this.patient}>Patient</button>
+                <button onClick={this.doctor}><img title="Doctor" src={require("./img/doc.png")}></img></button> <button onClick={this.patient}><img title="Patient" src={require("./img/patient.png")}></img></button>
             </div>
         )
     }

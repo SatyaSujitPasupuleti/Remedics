@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Axios from "axios";
 
 class General extends Component{
     constructor(props){
@@ -28,14 +29,16 @@ class General extends Component{
     }
 
     submitGeneral = () => {
-        //add to db
-        this.props.history.push("/initial");
+        axios.post("", this.state).then(
+            () => this.props.history.push("/feeling")
+        );
+        
     }
 
     render(){
         return(
             <div>
-                <p>Please fill out your general information. All are required</p>
+                <p>Please fill out your information. All are required</p>
                 <form method="POST" onSubmit={this.submitGeneral}>
                     <label>
                         First Name: <input type="text" value={this.state.firstName} name="firstName" onChange={this.handleChange} required/>
