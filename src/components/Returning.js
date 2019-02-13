@@ -7,7 +7,7 @@ class Returning extends Component{
     }
 
     returning = () => {
-        this.props.history.push("/initial")
+        this.props.history.push("/feeling")
     }
 
     newPatient = () => {

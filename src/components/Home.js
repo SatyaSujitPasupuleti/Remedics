@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Returning extends Component{
+class Home extends Component{
 
     componentDidMount(){
         document.title = "Home";
@@ -23,4 +23,4 @@ class Returning extends Component{
     }
 }
 
-export default Returning;
+export default Home;
