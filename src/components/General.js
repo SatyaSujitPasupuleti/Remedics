@@ -29,7 +29,7 @@ class General extends Component{
     }
 
     submitGeneral = () => {
-        axios.post("", this.state).then(
+        Axios.post("", this.state).then(
             () => this.props.history.push("/feeling")
         );
         
