@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 
-class Mild extends Component{
+class Severe extends Component{
 
     componentDidMount(){
-        document.title = "Mild";
+        document.title = "Severe";
     }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    mild = () => {
+    severe = () => {
         //stuff
     }
 
     render(){
         return(
             <div>
-                <p>Hm, alright, </p>
+                <p>Oh boy, let's get that checked out right away.</p>
+                <p>Can you tell us where it hurts?</p>
             </div>
         )
     }
 }
 
-export default Mild;
+export default Severe;

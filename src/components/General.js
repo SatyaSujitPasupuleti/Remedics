@@ -59,13 +59,28 @@ class General extends Component{
                         Phone #: <input type="text" value={this.state.phoneNo} name="phoneNo" pattern="\d{3}[\-]\d{3}[\-]\d{4}" onChange={this.handleChange} maxLength="12" placeholder="XXX-XXX-XXXX" required/>
                     </label>
                     <label>
-                        Gender: <input type="text" value={this.state.gender} name="gender" maxLength="1" onChange={this.handleChange} required/>
+                        Gender: <select value={this.state.gender} name="gender" onChange={this.handleChange} required>
+                            <option></option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Non-binary</option>
+                            <option>F</option>
+                        </select>
                     </label>
                     <label>
                         Date of Birth: <input type="text" value={this.state.dob} name="dob" pattern="\d{2}[\/]\d{2}[\/]\d{4}" onChange={this.handleChange} placeholder="MM/DD/YYYY" maxLength="10" required/>
                     </label>
                     <label>
-                        Race: <input type="text" value={this.state.race} name="race" onChange={this.handleChange} required/>
+                        Race: <select value={this.state.race} name="race" onChange={this.handleChange} required>
+                            <option></option>
+                            <option>Hispanic/Latino</option>
+                            <option>American Indian/Alaska Native</option>
+                            <option>Asian</option>
+                            <option>Black/African American</option>
+                            <option>Native Hawaiian/Other Pacific Islander</option>
+                            <option>White/Caucasian</option>
+                            <option>Biracial/Mixed</option>
+                        </select>
                     </label>
                     <label>
                         Ethnicity: <input type="text" value={this.state.ethnicity} name="ethnicity" onChange={this.handleChange} required/>
