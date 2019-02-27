@@ -29,7 +29,7 @@ class General extends Component{
     }
 
     submitGeneral = () => {
-        Axios.post("", this.state).then(
+        Axios.post("http://localhost:4000/serverport/insert ", this.state).then(
             () => this.props.history.push("/feeling")
         );
         
@@ -39,7 +39,7 @@ class General extends Component{
         return(
             <div>
                 <p>Please fill out your information. All are required</p>
-                <form method="POST" onSubmit={this.submitGeneral}>
+                <form onSubmit={this.submitGeneral}>
                     <label>
                         First Name: <input type="text" value={this.state.firstName} name="firstName" onChange={this.handleChange} required/>
                     </label>

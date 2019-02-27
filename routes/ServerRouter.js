@@ -1,6 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
-const creds = require('../credentials.json');
+const creds = require('./credentials.json');
 const ServerRouter = express.Router();
 
 const con = mysql.createConnection({
@@ -8,7 +8,7 @@ const con = mysql.createConnection({
   user: creds.user,
   password: creds.password,
   database: creds.database,
-  multipleStatements: true
+  //multipleStatements: true
 });
 
 con.connect((err) => {
@@ -18,7 +18,7 @@ con.connect((err) => {
   console.log("Successfully connected to: " + creds.database);
 });
 
-ServerRouter.post('/insert', (req, res) => {
+ServerRouter.post('/general', async (req, res) => {
     con.query(
         'INSERT INTO test SET ?', 
         req, 
@@ -30,7 +30,7 @@ ServerRouter.post('/insert', (req, res) => {
       });
 });
 
-ServerRouter.post('/update', (req, res) => {
+ServerRouter.post('/update', async (req, res) => {
   con.query(
     'UPDATE test SET ' + req.column + '= ? Where id = ?',
     [req.update, req.id],
