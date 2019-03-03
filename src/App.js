@@ -4,8 +4,11 @@ import Returning from "./components/Returning";
 import Home from "./components/Home";
 import General from "./components/General";
 import Feeling from "./components/Feeling";
+import Pain from "./components/patient/notSoGood/Pain";
+import Relief from "./components/patient/good/Relief";
+import Login from "./components/doctor/Login";
+import Dashboard from "./components/doctor/Dashboard";
 import "./App.css";
-import Pain from "./components/notSoGood/Pain";
 
 class App extends Component {
   render() {
@@ -17,6 +20,9 @@ class App extends Component {
           <Route exact={true} path="/general" component={General}/>
           <Route exact={true} path="/feeling" component={Feeling}/>
           <Route exact={true} path="/pain" component={Pain}/>
+          <Route exact={true} path="/relief" component={Relief}/>
+          <Route exact={true} path="/login" component={Login}/>
+          <Route exact={true} path="/dashboard" component={Dashboard}/>
         </div>
       </BrowserRouter>
     );

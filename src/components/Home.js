@@ -7,7 +7,7 @@ class Home extends Component{
     }
 
     doctor = () => {
-        this.props.history.push("/")
+        this.props.history.push("/login")
     }
 
     patient = () => {

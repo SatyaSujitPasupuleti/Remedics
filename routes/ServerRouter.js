@@ -18,7 +18,7 @@ con.connect((err) => {
   console.log("Successfully connected to: " + creds.database);
 });
 
-ServerRouter.post('/general', async (req, res) => {
+ServerRouter.post('/insert', async (req, res) => {
     con.query(
         'INSERT INTO test SET ?', 
         req, 
