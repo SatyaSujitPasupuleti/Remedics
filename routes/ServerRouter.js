@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const creds = require('./credentials.json');
-const ServerRouter = express.Router();
+const router = express.Router();
 
 const con = mysql.createConnection({
   host: creds.host,
@@ -18,10 +18,14 @@ con.connect((err) => {
   console.log("Successfully connected to: " + creds.database);
 });
 
-ServerRouter.post('/insert', async (req, res) => {
+router.get('/', async (req, res) => {
+  res.render("/", {});
+});
+
+router.post('/general', async (req, res) => {
     con.query(
         'INSERT INTO test SET ?', 
-        req, 
+        req.body, 
         (err, res) =>{
         if(err){
           throw err;
@@ -30,10 +34,10 @@ ServerRouter.post('/insert', async (req, res) => {
       });
 });
 
-ServerRouter.post('/update', async (req, res) => {
+router.post('/update', async (req, res) => {
   con.query(
-    'UPDATE test SET ' + req.column + '= ? Where id = ?',
-    [req.update, req.id],
+    'UPDATE test SET ' + req.body.column + '= ? Where id = ?',
+    [req.body.update, req.body.id],
     (err, res) =>{
       if(err){
         throw err;
@@ -43,10 +47,10 @@ ServerRouter.post('/update', async (req, res) => {
     });
 })
 
-ServerRouter.post('/delete', async (req, res) => {
+router.post('/delete', async (req, res) => {
   con.query(
     'DELETE FROM test WHERE id = ?', 
-    [req.id],
+    [req.body.id],
     (err, result) =>{
       if(err){
         throw err;
@@ -55,18 +59,18 @@ ServerRouter.post('/delete', async (req, res) => {
     });
 })
 
-ServerRouter.post('/query', async (req, res) => {
+router.post('/query', async (req, res) => {
   con.query(
     'SELECT FROM patients where id = ?',
     //what's this
-    [req.id],
+    [req.body.id],
     (err, res) =>{
       if(err){
         throw err;
       }
       console.log('Data received succesfully');
-      console.log(rows);
+      res.send(data);
   });
 })
 
-module.exports = ServerRouter;
+module.exports = router;

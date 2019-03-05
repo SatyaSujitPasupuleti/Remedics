@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Axios from "axios";
+import axios from "axios";
+import { withRouter } from "react-router";
 
 class General extends Component{
     constructor(props){
@@ -28,10 +29,28 @@ class General extends Component{
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    submitGeneral = () => {
-        Axios.post("http://localhost:4000/serverport/insert ", this.state).then(
-            () => this.props.history.push("/feeling")
-        );
+    submitGeneral = (e) => {
+        const reqBody = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            street: this.state.street,
+            city: this.state.city,
+            state: this.state.state,
+            phoneNo: this.state.phoneNo,
+            gender: this.state.gender,
+            dob: this.state.dob,
+            race: this.state.race,
+            ethnicity: this.state.ethnicity,
+            language: this.state.language,
+            insuranceProvider: this.state.insuranceProvider,
+        }
+        
+        axios.post("http://localhost:4000/general ", reqBody).then(
+            () => {
+                this.props.history.push("/feeling");
+            }
+        )
+        .catch(err => console.log(err));
         
     }
 
@@ -64,7 +83,6 @@ class General extends Component{
                             <option>Male</option>
                             <option>Female</option>
                             <option>Non-binary</option>
-                            <option>F</option>
                         </select>
                     </label>
                     <label>
@@ -98,4 +116,4 @@ class General extends Component{
     }
 }
 
-export default General;
+export default withRouter(General);
