@@ -30,6 +30,7 @@ class General extends Component{
     }
 
     submitGeneral = (e) => {
+        e.preventDefault();
         const reqBody = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -45,8 +46,9 @@ class General extends Component{
             insuranceProvider: this.state.insuranceProvider,
         }
         
-        axios.post("http://localhost:4000/general ", reqBody).then(
-            () => {
+        axios.post("http://localhost:4000/insert/general", reqBody).then(
+            (response) => {
+                alert("You have submitted your information!");  
                 this.props.history.push("/feeling");
             }
         )
@@ -86,7 +88,7 @@ class General extends Component{
                         </select>
                     </label>
                     <label>
-                        Date of Birth: <input type="text" value={this.state.dob} name="dob" pattern="\d{2}[\/]\d{2}[\/]\d{4}" onChange={this.handleChange} placeholder="MM/DD/YYYY" maxLength="10" required/>
+                        Date of Birth: <input type="text" value={this.state.dob} name="dob" pattern="\d{4}[-]\d{2}[-]\d{2}" onChange={this.handleChange} placeholder="YYYY-MM-DD" maxLength="10" required/>
                     </label>
                     <label>
                         Race: <select value={this.state.race} name="race" onChange={this.handleChange} required>

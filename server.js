@@ -4,14 +4,12 @@ const PORT = 4000;
 const bodyParser = require("body-parser");
 const ServerRouter = require('./routes');
 const pages =  express.static(__dirname + "/public");
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use("/", pages);
 app.use(bodyParser.json());
 ServerRouter(app);
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(PORT, () =>{
-    console.log(`Server running on PORT: ${PORT}`);
-})
+app.listen(process.env.PORT || PORT);

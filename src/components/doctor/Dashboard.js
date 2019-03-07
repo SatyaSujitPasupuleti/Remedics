@@ -18,7 +18,7 @@ class Dashboard extends Component{
             <div>
                 <nav>
                     <a>Patients</a>
-                    <a>Patients</a>
+                    <a>Profile</a>
                 </nav>
             </div>
         )

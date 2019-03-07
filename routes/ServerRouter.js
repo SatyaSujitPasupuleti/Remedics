@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
   res.render("/", {});
 });
 
-router.post('/general', async (req, res) => {
+router.post('/insert/general', async (req, res) => {
     con.query(
         'INSERT INTO test SET ?', 
         req.body, 
