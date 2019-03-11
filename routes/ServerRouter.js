@@ -18,19 +18,17 @@ con.connect((err) => {
   console.log("Successfully connected to: " + creds.database);
 });
 
-router.get('/', async (req, res) => {
-  res.render("/", {});
-});
-
 router.post('/insert/general', async (req, res) => {
     con.query(
         'INSERT INTO test SET ?', 
         req.body, 
-        (err, res) =>{
-        if(err){
+        (err, result) =>{
+        if (err){
           throw err;
         }
-        console.log('Last ID', res.insertId);
+        console.log('Last ID', result.insertId);
+
+        return ('Last ID', result.insertId);
       });
 });
 
@@ -38,12 +36,14 @@ router.post('/update', async (req, res) => {
   con.query(
     'UPDATE test SET ' + req.body.column + '= ? Where id = ?',
     [req.body.update, req.body.id],
-    (err, res) =>{
-      if(err){
+    (err, result) =>{
+      if (err){
         throw err;
       }
 
-      console.log(`Rows changed: ${res.changedRows}`);
+      console.log(`Rows changed: ${result.changedRows}`);
+
+      return `Rows changed: ${result.changedRows}`;
     });
 })
 
@@ -52,24 +52,25 @@ router.post('/delete', async (req, res) => {
     'DELETE FROM test WHERE id = ?', 
     [req.body.id],
     (err, result) =>{
-      if(err){
+      if (err){
         throw err;
       }
       console.log(`Deleted ${result.affectedRows}`);
+
+      return (`Deleted ${result.affectedRows}`);
     });
 })
 
 router.post('/query', async (req, res) => {
   con.query(
     'SELECT FROM patients where id = ?',
-    //what's this
     [req.body.id],
-    (err, res) =>{
-      if(err){
+    (err, result) =>{
+      if (err){
         throw err;
       }
       console.log('Data received succesfully');
-      res.send(data);
+      return result
   });
 })
 

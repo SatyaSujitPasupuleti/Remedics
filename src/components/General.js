@@ -46,13 +46,13 @@ class General extends Component{
             insuranceProvider: this.state.insuranceProvider,
         }
         
-        axios.post("http://localhost:4000/insert/general", reqBody).then(
-            (response) => {
-                alert("You have submitted your information!");  
-                this.props.history.push("/feeling");
-            }
-        )
-        .catch(err => console.log(err));
+        axios.post("http://localhost:4000/insert/general", reqBody)
+        .catch(err => {
+            console.log(err);
+            throw err;
+        });
+
+        this.props.history.push("/feeling");
         
     }
 
