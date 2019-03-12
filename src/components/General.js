@@ -47,12 +47,13 @@ class General extends Component{
         }
         
         axios.post("http://localhost:4000/insert/general", reqBody)
+        .then(
+            (response) => this.props.history.push("/feeling")
+        )
         .catch(err => {
             console.log(err);
             throw err;
         });
-
-        this.props.history.push("/feeling");
         
     }
 
