@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Relief extends Component{
+export default class Relief extends Component{
 
     componentDidMount(){
         document.title = "Relief";
@@ -20,5 +20,3 @@ class Relief extends Component{
         )
     }
 }
-
-export default Relief;

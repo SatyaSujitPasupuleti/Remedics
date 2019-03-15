@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
 
-class General extends Component{
+export default class General extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -118,5 +118,3 @@ class General extends Component{
         )
     }
 }
-
-export default withRouter(General);

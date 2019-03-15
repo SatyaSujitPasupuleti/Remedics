@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Severe extends Component{
+export default class Severe extends Component{
 
     componentDidMount(){
         document.title = "Severe";
@@ -23,5 +23,3 @@ class Severe extends Component{
         )
     }
 }
-
-export default Severe;

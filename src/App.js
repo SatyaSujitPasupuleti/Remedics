@@ -8,13 +8,20 @@ import Pain from "./components/patient/notSoGood/Pain";
 import Relief from "./components/patient/good/Relief";
 import Login from "./components/doctor/Login";
 import Dashboard from "./components/doctor/Dashboard";
+import Profile from "./components/doctor/Profile";
 import "./App.css";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <div className="App">
         <div>
+          <Navbar/>
+          <Route exact={true} path="/dashboard" component={Dashboard}>
+            <Route exact={true} path="/profile" component={Profile} />
+          </Route>
+        </div>
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/returning" component={Returning}/>
           <Route exact={true} path="/general" component={General}/>
@@ -22,11 +29,8 @@ class App extends Component {
           <Route exact={true} path="/pain" component={Pain}/>
           <Route exact={true} path="/relief" component={Relief}/>
           <Route exact={true} path="/login" component={Login}/>
-          <Route exact={true} path="/dashboard" component={Dashboard}/>
         </div>
       </BrowserRouter>
     );
   }
 }
-
-export default App;

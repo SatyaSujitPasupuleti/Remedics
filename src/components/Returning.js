@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Returning extends Component{
+export default class Returning extends Component{
 
     componentDidMount(){
         document.title = "Returning";
@@ -25,5 +25,3 @@ class Returning extends Component{
         )
     }
 }
-
-export default Returning;

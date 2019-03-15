@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Mild extends Component{
+export default class Mild extends Component{
 
     componentDidMount(){
         document.title = "Mild";
@@ -22,5 +22,3 @@ class Mild extends Component{
         )
     }
 }
-
-export default Mild;
