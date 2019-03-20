@@ -16,6 +16,10 @@ export default class Navbar extends Component{
     //     )
     // }
 
+    dropDown = (e) =>{
+        e.preventDefault();
+    }
+
     render(){
         return(
             <div>
@@ -25,7 +29,7 @@ export default class Navbar extends Component{
                 </nav>
                 <nav id="top-nav">
                     <div className="dropdown">
-                        <button class="dropbtn">{this.state.name}</button>
+                        <button onClick={this.dropDown} class="dropbtn">{this.state.name}</button>
                         <div class="dropdown-content">
                             <a href="/profile">Profile</a>
                             <a href="/patients">Patients</a>

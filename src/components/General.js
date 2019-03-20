@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter } from "react-router";
 
 export default class General extends Component{
     constructor(props){
@@ -51,7 +50,6 @@ export default class General extends Component{
             (response) => this.props.history.push("/feeling")
         )
         .catch(err => {
-            console.log(err);
             throw err;
         });
         

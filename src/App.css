@@ -13,3 +13,52 @@ input{
 h1{
     font-weight: bold;
 }
+
+.table{
+    display: table;
+}
+
+.row{
+    display: table-row;
+}
+
+.cell{
+    display: table-cell;
+    padding: 5px;
+}
+
+nav{
+    background-color: black;
+    color: white;
+}
+
+form{
+    align-content: center;
+}
+
+#top-nav{
+    position: absolute;
+    float: right;
+    top:0;
+    right:0;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+}
+
+#top-nav a{
+    float: right;
+}
+
+#top-nav div{
+    float: right;
+}
+#side-nav{
+    float: left;
+    position: absolute;
+    left: 0;
+    top:0;
+    padding: 10px;
+    height: 100%;
+    z-index: 99;
+}
