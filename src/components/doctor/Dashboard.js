@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 
 export default class Dashboard extends Component{
     constructor(props){
@@ -16,8 +17,9 @@ export default class Dashboard extends Component{
 
     render(){
         return(
-            <div>
-                Hello World!
+            <div className="mainContent">
+                <Navbar />
+                <p>Welcome to the Dashboard!</p>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 import axios from "axios";
 
 export default class Profile extends Component{
@@ -26,7 +27,8 @@ export default class Profile extends Component{
 
     render(){
         return(
-            <div>
+            <div className="mainContent">
+                <Navbar />
                 <h1>{this.state.name}</h1>
                 <p>{this.state.practice}</p>
                 <p>{this.state.email}</p>

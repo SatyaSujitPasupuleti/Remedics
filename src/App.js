@@ -10,7 +10,6 @@ import Login from "./components/doctor/Login";
 import Dashboard from "./components/doctor/Dashboard";
 import Profile from "./components/doctor/Profile";
 import Patients from "./components/doctor/Patients";
-import Navbar from "./components/doctor/Navbar"
 import "./App.css";
 
 export default class App extends Component {
@@ -18,14 +17,10 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <div>
-              <Navbar/>
-            <Route exact={true} path="/dashboard" component={Dashboard}>
-              <Route exact={true} path="/profile" component={Profile} />
-              <Route exact={true} path="/patients" component={Patients} />
-            </Route>
-          </div>
           <Route exact={true} path="/" component={Home}/>
+          <Route exact={true} path="/dashboard" component={Dashboard} />
+          <Route exact={true} path="/profile" component={Profile} />
+          <Route exact={true} path="/patients" component={Patients} />
           <Route exact={true} path="/returning" component={Returning}/>
           <Route exact={true} path="/general" component={General}/>
           <Route exact={true} path="/feeling" component={Feeling}/>

@@ -5,7 +5,9 @@ export default class Navbar extends Component{
     constructor(props){
         super(props);
         this.state = {
-            name: ""
+            name: "Jake",
+            title: "",
+            showMenu: false
         }
     }
 
@@ -16,24 +18,46 @@ export default class Navbar extends Component{
     //     )
     // }
 
-    dropDown = (e) =>{
+    showDropdown = (e) => {
         e.preventDefault();
+
+        this.setState({ showMenu: true }, () =>
+            document.addEventListener("click", this.closeDropdown)
+        );
+    }
+
+    closeDropdown = (e) => {
+        if (!this.dropdownMenu.contains(e.target)) {
+            this.setState({ showMenu: false }, () => 
+                document.removeEventListener("click", this.closeMenu)
+            );
+        }
     }
 
     render(){
         return(
             <div>
                 <nav id="side-nav">
-                    <p>Welcome to the Dashboard!</p>
+                    <div id="welcomeBox"></div>
                     <a href="/questions">Questionnaire</a>
                 </nav>
                 <nav id="top-nav">
-                    <div className="dropdown">
-                        <button onClick={this.dropDown} class="dropbtn">{this.state.name}</button>
-                        <div class="dropdown-content">
-                            <a href="/profile">Profile</a>
-                            <a href="/patients">Patients</a>
-                        </div>
+                    <div className="dropdown"
+                        ref={(element) => {
+                            this.dropdownMenu = element;
+                        }}
+                    >
+                        <button onClick={this.showDropdown} class="dropbtn">{this.state.name}</button>
+                        {
+                            this.state.showMenu
+                            ? 
+                            <div class="dropdown-content">
+                                <a href="/profile">Profile</a>
+                                <a href="/patients">Patients</a>
+                            </div>
+                             : null
+                        }
+                        
                     </div>
                 </nav>
             </div>

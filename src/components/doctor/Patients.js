@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 import axios from "axios";
 
 export default class Patients extends Component{
@@ -9,17 +10,17 @@ export default class Patients extends Component{
         }
     }
 
-    componentDidMount(){
-        axios.post("get patients list")
-        .then(
-            (res) => this.setState({
-                patientsList: res
-            })
-        )
-        .catch(err => {
-            throw err;
-        });
-    }
+    // componentDidMount(){
+    //     axios.post("get patients list")
+    //     .then(
+    //         (res) => this.setState({
+    //             patientsList: res
+    //         })
+    //     )
+    //     .catch(err => {
+    //         throw err;
+    //     });
+    // }
 
     listPatients(){
         if (this.state.patientsList.length < 1){
@@ -39,7 +40,9 @@ export default class Patients extends Component{
 
     render(){
         return(
-            <div>
+            <div className="mainContent">
+                <Navbar />
+                <h1>Your patients:</h1>
                 {this.listPatients()}
             </div>
         )
