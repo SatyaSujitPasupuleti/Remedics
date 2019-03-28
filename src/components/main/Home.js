@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 export default class Home extends Component{
 
-    componentDidMount(){
-        document.title = "Home";
-    }
-
     doctor = () => {
         this.props.history.push("/login")
     }
@@ -17,7 +13,7 @@ export default class Home extends Component{
     render(){
         return(
             <div>
-                <button onClick={this.doctor}><img title="Doctor" src={require("./img/doc.png")}></img></button> <button onClick={this.patient}><img title="Patient" src={require("./img/patient.png")}></img></button>
+                <button onClick={this.doctor}><img title="Doctor" src={require("../img/doc.png")}></img></button> <button onClick={this.patient}><img title="Patient" src={require("../img/patient.png")}></img></button>
             </div>
         )
     }

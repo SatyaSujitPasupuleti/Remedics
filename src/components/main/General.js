@@ -21,7 +21,7 @@ export default class General extends Component{
     }
 
     componentDidMount(){
-        document.title = "General Information";
+        document.title = "Remedics | General Info";
     }
 
     handleChange = e => {

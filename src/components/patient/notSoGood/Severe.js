@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Severe extends Component{
 
     componentDidMount(){
-        document.title = "Severe";
+        document.title = "Remedics | Severe";
     }
 
     handleChange = e => {

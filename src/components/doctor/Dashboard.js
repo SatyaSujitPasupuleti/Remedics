@@ -2,24 +2,17 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 
 export default class Dashboard extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            //
-        }
-    }
 
     componentDidMount(){
-        document.title = "Dashboard";
-        // call db to get doctor's name, i guess
-        // axios.get("").then()
+        document.title = "Remedics | Dashboard";
     }
 
     render(){
         return(
             <div className="mainContent">
                 <Navbar />
-                <p>Welcome to the Dashboard!</p>
+                <h1>Welcome to the Dashboard!</h1>
+                <p>Check out your profile, look at the questions, or check what you need to do!</p>
             </div>
         )
     }

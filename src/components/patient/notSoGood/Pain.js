@@ -9,7 +9,7 @@ export default class Pain extends Component{
     }
 
     componentDidMount(){
-        document.title = "Pain";
+        document.title = "Remedics | Pain level";
     }
 
     handleChange = e => {

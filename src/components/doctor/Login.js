@@ -11,7 +11,7 @@ export default class Login extends Component{
     }
 
     componentDidMount(){
-        document.title = "Login";
+        document.title = "Remedics | Login";
     }
 
     handleChange = e => {

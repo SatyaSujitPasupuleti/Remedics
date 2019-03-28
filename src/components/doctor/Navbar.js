@@ -6,7 +6,6 @@ export default class Navbar extends Component{
         super(props);
         this.state = {
             name: "Jake",
-            title: "",
             showMenu: false
         }
     }
@@ -39,7 +38,7 @@ export default class Navbar extends Component{
             <div>
                 <nav id="side-nav">
                     <div id="welcomeBox"></div>
-                    <a href="/questions">Questionnaire</a>
+                    <a href="#">To dos</a>
                 </nav>
                 <nav id="top-nav">
                     <div className="dropdown"
@@ -47,7 +46,7 @@ export default class Navbar extends Component{
                             this.dropdownMenu = element;
                         }}
                     >
-                        <button onClick={this.showDropdown} class="dropbtn">{this.state.name}</button>
+                        <button onClick={this.showDropdown} class="dropdownButton">{this.state.name}</button>
                         {
                             this.state.showMenu
                             ? 
@@ -55,9 +54,8 @@ export default class Navbar extends Component{
                                 <a href="/profile">Profile</a>
                                 <a href="/patients">Patients</a>
                             </div>
-                             : null
+                                : null
                         }
-                        
                     </div>
                 </nav>
             </div>

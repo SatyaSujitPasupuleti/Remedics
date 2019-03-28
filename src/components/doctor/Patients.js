@@ -10,17 +10,19 @@ export default class Patients extends Component{
         }
     }
 
-    // componentDidMount(){
-    //     axios.post("get patients list")
-    //     .then(
-    //         (res) => this.setState({
-    //             patientsList: res
-    //         })
-    //     )
-    //     .catch(err => {
-    //         throw err;
-    //     });
-    // }
+    componentDidMount(){
+        document.title = "Remedics | Patients";
+
+        // axios.post("get patients list")
+        // .then(
+        //     (res) => this.setState({
+        //         patientsList: res
+        //     })
+        // )
+        // .catch(err => {
+        //     throw err;
+        // });
+    }
 
     listPatients(){
         if (this.state.patientsList.length < 1){

@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 
 export default class Feeling extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            painLevel: "",
-        }
-    }
 
     componentDidMount(){
-        document.title = "Feeling";
+        document.title = "Remedics | Feeling";
     }
 
     thumbsDown = () => {
@@ -26,8 +20,8 @@ export default class Feeling extends Component{
         return(
             <div>
                 <p>How are you feeling today?</p>
-                <button id="thumbsUp" onClick={this.thumbsUp}><img title="thumbsup" src={require("./img/thumbsup.png")} height="42" width="42"/> </button>
-                <button id="thumbsDown" onClick={this.thumbsDown}><img title="thumbsdown" src={require("./img/thumbsdown.png")} height="42" width="42"/></button>
+                <button id="thumbsUp" onClick={this.thumbsUp}><img title="thumbsup" src={require("../img/thumbsup.png")} height="42" width="42"/> </button>
+                <button id="thumbsDown" onClick={this.thumbsDown}><img title="thumbsdown" src={require("../img/thumbsdown.png")} height="42" width="42"/></button>
             </div>
         )
     }

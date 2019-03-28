@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Relief extends Component{
 
     componentDidMount(){
-        document.title = "Relief";
+        document.title = "Remedics | Relief";
     }
     
     render(){

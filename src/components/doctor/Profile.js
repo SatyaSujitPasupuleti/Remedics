@@ -6,15 +6,15 @@ export default class Profile extends Component{
     constructor(props){
         super(props);
         this.state = {
-            name: "",
-            practice: "",
-            email: "",
+            name: "Example",
+            practice: "Example",
+            email: "Example",
         }
     }
 
     componentDidMount(){
-        document.title = "Profile";
-        
+        document.title = "Remedics | Profile";
+
         // axios.get("more doc info")
         // .then(
         //     (response) => this.setState({
@@ -32,7 +32,6 @@ export default class Profile extends Component{
                 <h1>{this.state.name}</h1>
                 <p>{this.state.practice}</p>
                 <p>{this.state.email}</p>
-                <a href="/dashboard">Back to dashboard.</a>
             </div>
         )
     }

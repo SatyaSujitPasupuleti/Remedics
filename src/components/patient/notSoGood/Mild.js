@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
 export default class Mild extends Component{
-
     componentDidMount(){
-        document.title = "Mild";
+        document.title = "Remedics | Mild";
     }
 
     handleChange = e => {
@@ -17,7 +16,8 @@ export default class Mild extends Component{
     render(){
         return(
             <div>
-                <p>Hm, alright, </p>
+                <p>Hm, alright, but you must be here for a reason.</p>
+                <p>Can you see which of the following would apply to you?</p>
             </div>
         )
     }

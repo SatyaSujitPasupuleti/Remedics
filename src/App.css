@@ -1,4 +1,8 @@
-input{
+* {
+    font-style: "Apercu";
+}
+
+input {
     display: block;
     padding: 10px 10px;
     border-radius: 10px;
@@ -6,20 +10,18 @@ input{
     margin: 10px auto; 
 }
 
-h1{
+h1 {
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-button{
-    font: inherit;
+button {
     padding: 9px;
     border: none;
-    border-radius: 10px;
     background-color: gray;
     font-size: 15px;
     -webkit-appearance: none;
@@ -28,79 +30,101 @@ button{
     margin-right: 10px;
 }
 
-form{
+form {
     text-align: center;
+    align-content: center;
 }
 
-.table{
+nav {
+    background-color: #1E90FF;
+    color: white;
+}
+
+.table {
     display: table;
 }
 
-.row{
+.row {
     display: table-row;
 }
 
-.cell{
+.cell {
     display: table-cell;
     padding: 5px;
 }
 
-.App{
+.App {
     font-style: "Apercu";
     text-align: center;
 }
 
-nav{
-    background-color: black;
-    color: white;
-}
-
-form{
-    align-content: center;
-}
-
-#top-nav{
-    position: absolute;
-    float: right;
-    top: 0;
-    right: 0;
-    margin: 0px;
-    padding: 10px;
-    width: 100%;
-}
-
-#top-nav a{
+.dropdown-content {
     display: inline-block;
 }
 
-#top-nav div{
-    clear: right;
-    float: right;
-    padding-bottom: 10px;
+.dropdownButton {
+    background-color: #008B8B; /* dark cyan */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#side-nav{
+.dropdown {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#top-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0px;
+    padding: 5px;
+    width: 100%;
+}
+
+#top-nav a {
+    display: block;
+    color: white;
+    padding: 5px 10px;
+    width: auto;
+}
+
+#top-nav a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+#top-nav div {
+    float: right;
+}
+
+#side-nav {
     float: left;
     position: absolute;
     left: 0;
     height: 100%;
     z-index: 99;
     width: 15%;
+    top: 0px;
     text-decoration: none;
 }
 
-#side-nav a:hover{
-    background-color: lightgray;
-    padding-top: 11px;
-    padding-left: 35px;
-    padding-right: 35px;
-    padding-bottom: 11px;
+#side-nav a {
+    color: white;
+    display: block;
+    padding: 10px 40px;
+    width: auto;
 }
 
-#welcomeBox{
-    background-color: gray;
+#side-nav a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+#welcomeBox {
+    background-color: lightblue;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 36px;
     padding-right: 10px;
     padding-left: 10px;
     top: 0px;

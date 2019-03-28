@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Returning extends Component{
 
     componentDidMount(){
-        document.title = "Returning";
+        document.title = "Remedics | Returning";
     }
 
     returning = () => {
