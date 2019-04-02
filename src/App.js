@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Returning from "./components/main/Returning";
 import Home from "./components/main/Home";
 import General from "./components/main/General";
@@ -11,6 +11,8 @@ import Dashboard from "./components/doctor/Dashboard";
 import Profile from "./components/doctor/Profile";
 import Patients from "./components/doctor/Patients";
 // import { PrivateRoute } from "./components/PrivateRoute";
+import BodyArea from "./components/patient/notSoGood/BodyArea";
+import Symptoms from "./components/patient/notSoGood/Symptoms";
 import "./App.css";
 
 export default class App extends Component {
@@ -28,6 +30,8 @@ export default class App extends Component {
             <Route exact={true} path="/pain" component={Pain}/>
             <Route exact={true} path="/relief" component={Relief}/>
             <Route exact={true} path="/login" component={Login}/>
+            <Route exact={true} path="/bodyarea" component={BodyArea}/>
+            <Route exact={true} path="/symptoms" component={Symptoms}/>
         </div>
       </BrowserRouter>
     );

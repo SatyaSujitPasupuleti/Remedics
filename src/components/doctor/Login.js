@@ -25,9 +25,11 @@ export default class Login extends Component{
             password: this.state.password
         }
 
-        axios.post("", reqBody)
-        .then()
-        .catch(err => console.log(err));
+        // axios.post("", reqBody)
+        // .then(
+        //     () => this.props.history.push("/")
+        // )
+        // .catch(err => console.log(err));
 }
 
     render(){

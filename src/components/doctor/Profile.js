@@ -23,6 +23,7 @@ export default class Profile extends Component{
         //         email: response.email
         //     })
         // )
+        // .catch(err => console.log(err));
     }
 
     render(){

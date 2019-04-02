@@ -16,16 +16,10 @@ export default class Pain extends Component{
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    level = () => {
-        if (parseInt(this.state.painLevel) < 4){
-            this.props.history.push("/mild");
-        }
-        else if (parseInt(this.state.painLevel) >= 4 && parseInt(this.state.painLevel) < 7){
-            this.props.history.push("/noticeable");
-        }
-        else{
-            this.props.history.push("/severe");
-        }
+    level = (e) => {
+        e.preventDefault();
+        localStorage.setItem("level", this.state.painLevel);
+        this.props.history.push("/bodyarea");
     }
 
     render(){

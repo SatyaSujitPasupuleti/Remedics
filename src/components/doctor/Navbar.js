@@ -15,6 +15,7 @@ export default class Navbar extends Component{
     //     .then(
     //         (response) => this.setState({name: response.name})
     //     )
+    //     .catch(err => console.log(err));
     // }
 
     showDropdown = (e) => {
