@@ -1,22 +1,17 @@
-const mysql = require('mysql');
+const Pool = require('pg').Pool;
 const creds = require('./credentials.json');
 
-const con = mysql.createConnection({
+//port should be 5342
+const pool = new Pool({
     host: creds.host,
     user: creds.user,
     password: creds.password,
-    database: creds.database
-});
-
-con.connect((err) => {
-    if (err){
-        throw err;
-    }
-    console.log("Successfully connected to: " + creds.database);
+    database: creds.database,
+    port: creds.port
 });
 
 async function insertGeneral(info){
-    con.query(
+    pool.query(
         'INSERT INTO test SET ?', 
         info, 
         (err, result) =>{
@@ -30,7 +25,7 @@ async function insertGeneral(info){
 }
 
 async function updateGeneral(info){
-    con.query(
+    pool.query(
         'UPDATE test SET ' + info.column + '= ? Where id = ?',
         [info.update, info.id],
         (err, result) =>{
@@ -45,7 +40,7 @@ async function updateGeneral(info){
 }
 
 async function deleteGeneral(info){
-    con.query(
+    pool.query(
         'DELETE FROM test WHERE id = ?', 
         [info.id],
         (err, result) =>{

@@ -1,7 +1,7 @@
-const ServerRouter = require("./ServerRouter");
+const PatientsRouter = require("./patients");
 
 const constructorMethods = (app) =>{
-    app.use("/", ServerRouter);
+    app.use("/", PatientsRouter);
 
     app.use("*", (req, res) => {
         res.redirect("/");
