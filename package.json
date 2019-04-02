@@ -9,7 +9,7 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mysql": "^2.16.0",
+    "pg": "^7.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
