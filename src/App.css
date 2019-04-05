@@ -1,4 +1,5 @@
 input {
+    font-style: "Apercu";
     display: block;
     padding: 10px 10px;
     border-radius: 10px;
@@ -7,20 +8,24 @@ input {
 }
 
 h1 {
+    font-style: "Apercu";
     font-weight: bold;
     margin-top: 80px;
 }
 
 a {
+    font-style: "Apercu";
     text-decoration: none;
 }
 
 p {
+    font-style: "Apercu";
     margin-top: 70px;
     margin-bottom: 40px;
 }
 
 button {
+    font-style: "Apercu";
     padding: 9px;
     border: none;
     background-color: gray;
@@ -29,6 +34,7 @@ button {
     color: white;
     margin-left: 10px;
     margin-right: 10px;
+    align-content: center;
 }
 
 form {
@@ -54,8 +60,11 @@ nav {
     padding: 5px;
 }
 
+.homeButton{
+    height: 20%;
+}
+
 .App {
-    font-style: "Apercu";
     text-align: center;
 }
 
@@ -134,9 +143,12 @@ nav {
 }
 
 #bodyArea{
-    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #bodyArea button{
-    display: block;
+    width: 10%;
+    margin: 10px;
 }

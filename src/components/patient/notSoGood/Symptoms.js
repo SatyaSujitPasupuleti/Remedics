@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import axios from "axios"
 
 export default class Symptoms extends Component{
 
@@ -11,7 +12,7 @@ export default class Symptoms extends Component{
     render(){
         return(
             <div>
-                <p>So what kinds of things are you experiencing? List all that apply.</p>
+                <p>Which of the following best describes your condition?</p>
                 <button onClick={(e) => this.selectSymptom(e)}>Ache/Sore</button>
                 <button onClick={(e) => this.selectSymptom(e)}>Rash</button>
                 <button onClick={(e) => this.selectSymptom(e)}>Inflammation</button>

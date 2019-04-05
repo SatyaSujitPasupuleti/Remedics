@@ -11,7 +11,9 @@ import Dashboard from "./components/doctor/Dashboard";
 import Profile from "./components/doctor/Profile";
 import Patients from "./components/doctor/Patients";
 // import { PrivateRoute } from "./components/PrivateRoute";
-import BodyArea from "./components/patient/notSoGood/BodyArea";
+import Mild from "./components/patient/notSoGood/Mild";
+import Moderate from "./components/patient/notSoGood/Moderate";
+import Severe from "./components/patient/notSoGood/Severe";
 import Symptoms from "./components/patient/notSoGood/Symptoms";
 import "./App.css";
 
@@ -30,7 +32,9 @@ export default class App extends Component {
             <Route exact={true} path="/pain" component={Pain}/>
             <Route exact={true} path="/relief" component={Relief}/>
             <Route exact={true} path="/login" component={Login}/>
-            <Route exact={true} path="/bodyarea" component={BodyArea}/>
+            <Route exact={true} path="/mild" component={Mild}/>
+            <Route exact={true} path="/moderate" component={Moderate}/>
+            <Route exact={true} path="/severe" component={Severe}/>
             <Route exact={true} path="/symptoms" component={Symptoms}/>
         </div>
       </BrowserRouter>

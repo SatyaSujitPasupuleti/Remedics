@@ -1,50 +1,25 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import axios from "axios";
 
-export default class BodyArea extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            painLevel: localStorage.getItem("level"),
-            areaChosen: ""
-        }
-    }
-
-    thresholdLevel = () => {
-        if (parseInt(this.state.painLevel) < 4){
-            return(
-                <div>
-                    <p>Sorry to hear that. Can you show us where it feels this way?</p>
-                </div>
-            )
-        }
-        else if (parseInt(this.state.painLevel) >= 4 && parseInt(this.state.painLevel) < 7){
-            return(
-                <div>
-                    <p>Is there anything else you might be able to share?</p>
-                </div>
-            )
-        }
-        else{
-            return(
-                <div>
-                    <p>Oh boy, let's get that checked out right away.</p>
-                    <p>Can you tell us where it hurts?</p>
-                </div>
-            )
-        }
-    }
+class BodyArea extends Component{
 
     selectArea = (e) => {
         let area = e.target.innerHTML;
         // add to db body part that hurts?
         // redirect to another page that lists symptoms
+        // axios.post("link", { area: area })
+        // .then(
+        //     () => this.props.history.push("/symptoms")
+        // )
+        // .catch(err => {
+        //     throw err;
+        // });
     }
 
     render(){
         return(
             <div id="bodyArea">
-                {this.thresholdLevel}
                 <button onClick={(e) => this.selectArea(e)}>Head</button>
                 <button onClick={(e) => this.selectArea(e)}>Neck</button>
                 <button onClick={(e) => this.selectArea(e)}>Left arm</button>
@@ -62,3 +37,5 @@ export default class BodyArea extends Component{
         )
     }
 }
+
+export default withRouter(BodyArea)
