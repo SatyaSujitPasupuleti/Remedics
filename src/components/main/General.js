@@ -52,7 +52,6 @@ export default class General extends Component{
         .catch(err => {
             throw err;
         });
-        
     }
 
     render(){

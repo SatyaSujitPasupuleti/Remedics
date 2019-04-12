@@ -39,7 +39,7 @@ export default class Navbar extends Component{
             <div>
                 <nav id="side-nav">
                     <div id="welcomeBox"></div>
-                    <a href="#">To dos</a>
+                    <a href="/todo">To dos</a>
                 </nav>
                 <nav id="top-nav">
                     <div className="dropdown"

@@ -76,6 +76,7 @@ nav {
     background-color: #008B8B; /* dark cyan */
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 99;
 }
 
 .dropdown {

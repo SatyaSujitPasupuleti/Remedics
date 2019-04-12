@@ -4,17 +4,18 @@ import Returning from "./components/main/Returning";
 import Home from "./components/main/Home";
 import General from "./components/main/General";
 import Feeling from "./components/main/Feeling";
-import Pain from "./components/patient/notSoGood/Pain";
+import Pain from "./components/patient/notSoGood/painLevel/Pain";
 import Relief from "./components/patient/good/Relief";
 import Login from "./components/doctor/Login";
 import Dashboard from "./components/doctor/Dashboard";
 import Profile from "./components/doctor/Profile";
 import Patients from "./components/doctor/Patients";
 // import { PrivateRoute } from "./components/PrivateRoute";
-import Mild from "./components/patient/notSoGood/Mild";
-import Moderate from "./components/patient/notSoGood/Moderate";
-import Severe from "./components/patient/notSoGood/Severe";
+import Mild from "./components/patient/notSoGood/painLevel/Mild";
+import Moderate from "./components/patient/notSoGood/painLevel/Moderate";
+import Severe from "./components/patient/notSoGood/painLevel/Severe";
 import Symptoms from "./components/patient/notSoGood/Symptoms";
+import Todo from "./components/doctor/Todo";
 import "./App.css";
 
 export default class App extends Component {
@@ -36,6 +37,7 @@ export default class App extends Component {
             <Route exact={true} path="/moderate" component={Moderate}/>
             <Route exact={true} path="/severe" component={Severe}/>
             <Route exact={true} path="/symptoms" component={Symptoms}/>
+            <Route exact={true} path="/todo" component={Todo}/>
         </div>
       </BrowserRouter>
     );

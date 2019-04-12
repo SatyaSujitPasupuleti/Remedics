@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
+import Navbar from "./Navbar";
 
 export default class Todo extends Component{
     constructor(props){
@@ -18,6 +19,7 @@ export default class Todo extends Component{
     render(){
         return(
             <div>
+                <Navbar />
             </div>
         )
     }

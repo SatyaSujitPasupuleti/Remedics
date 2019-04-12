@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BodyArea from "./BodyArea";
+import BodyArea from "../BodyArea";
 
 export default class Mild extends Component{
     constructor(props){
