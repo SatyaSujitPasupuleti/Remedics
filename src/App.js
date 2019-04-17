@@ -16,6 +16,7 @@ import Moderate from "./components/patient/notSoGood/painLevel/Moderate";
 import Severe from "./components/patient/notSoGood/painLevel/Severe";
 import Symptoms from "./components/patient/notSoGood/Symptoms";
 import Todo from "./components/doctor/Todo";
+import Family from "./components/patient/good/Family";
 import "./App.css";
 
 export default class App extends Component {
@@ -38,6 +39,7 @@ export default class App extends Component {
             <Route exact={true} path="/severe" component={Severe}/>
             <Route exact={true} path="/symptoms" component={Symptoms}/>
             <Route exact={true} path="/todo" component={Todo}/>
+            <Route exact={true} path="/todo" component={Family}/>
         </div>
       </BrowserRouter>
     );

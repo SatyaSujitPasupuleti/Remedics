@@ -1,7 +1,6 @@
 const Pool = require('pg').Pool;
 const creds = require('./credentials.json');
 
-//port should be 5342
 const pool = new Pool({
     host: creds.host,
     user: creds.user,
