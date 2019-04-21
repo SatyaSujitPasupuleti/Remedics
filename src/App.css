@@ -61,7 +61,11 @@ nav {
 }
 
 .homeButton{
-    height: 20%;
+    margin-top: 100px;
+}
+
+.homeButton img{
+    height: 200px;
 }
 
 .App {

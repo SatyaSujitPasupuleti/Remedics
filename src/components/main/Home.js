@@ -7,7 +7,7 @@ export default class Home extends Component{
     }
 
     patient = () => {
-        this.props.history.push("/returning");
+        this.props.history.push("/patient_login");
     }
     
     render(){

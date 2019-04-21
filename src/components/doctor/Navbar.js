@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 export default class Navbar extends Component{
     constructor(props){
@@ -40,6 +40,7 @@ export default class Navbar extends Component{
                 <nav id="side-nav">
                     <div id="welcomeBox"></div>
                     <a href="/todo">To dos</a>
+                    <a href="/upload_questions">Questions</a>
                 </nav>
                 <nav id="top-nav">
                     <div className="dropdown"
@@ -47,11 +48,11 @@ export default class Navbar extends Component{
                             this.dropdownMenu = element;
                         }}
                     >
-                        <button onClick={this.showDropdown} class="dropdownButton">{this.state.name}</button>
+                        <button onClick={this.showDropdown} className="dropdownButton">{this.state.name}</button>
                         {
                             this.state.showMenu
                             ? 
-                            <div class="dropdown-content">
+                            <div className="dropdown-content">
                                 <a href="/profile">Profile</a>
                                 <a href="/patients">Patients</a>
                             </div>
