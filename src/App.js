@@ -9,6 +9,7 @@ import Patients from "./components/doctor/Patients";
 // import { PrivateRoute } from "./components/PrivateRoute";
 import Form from "./components/main/Form";
 import UploadCSV from "./components/doctor/UploadCSV";
+import Todo from "./components/doctor/Todo";
 import "./App.css";
 
 export default class App extends Component {
@@ -23,6 +24,7 @@ export default class App extends Component {
             <Route exact={true} path="/patient_login" component={PatientLogin}/>
             <Route exact={true} path="/login" component={Login}/>
             <Route exact={true} path="/form" component={Form}/>
+            <Route exact={true} path="/todo" component={Todo}/>
             <Route exact={true} path="/upload_questions" component={UploadCSV}/>
         </div>
       </BrowserRouter>

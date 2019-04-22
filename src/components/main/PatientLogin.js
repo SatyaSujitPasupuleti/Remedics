@@ -16,7 +16,7 @@ export default class PatientLogin extends Component{
     }
 
     submitForm = () => {
-        this.props.history.push("/general");
+        this.props.history.push("/form");
     }
     
     render(){

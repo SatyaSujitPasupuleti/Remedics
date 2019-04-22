@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import Papa from "papaparse"
+import Papa from "papaparse";
+import axios from "axios";
 
 export default class Todo extends Component{
     constructor(props){
@@ -14,6 +15,10 @@ export default class Todo extends Component{
         document.title = "Remedics | Upload Questions";
     }
 
+    sendEmail = () => {
+        // send email to patient, call from db?
+    }
+
     parseQuestions = (e) => {
         e.preventDefault();
 
@@ -22,7 +27,17 @@ export default class Todo extends Component{
             {
                 header: true,
                 complete: (results) => {
-                    console.log(parsed);
+                    let allData = results.data;
+                    console.log(allData);
+                    axios.post("http://localhost:4000/")
+                    .then(
+                        () => {
+                            console.log("Finished!");
+                            this.sendEmail();
+                            this.props.history.push("/dashboard");
+                        }
+                    )
+                    .catch(err => console.log(err));
                 }
             }
         );
