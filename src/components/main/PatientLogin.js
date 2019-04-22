@@ -11,7 +11,7 @@ export default class PatientLogin extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Patient Login";
     }
 
@@ -19,7 +19,7 @@ export default class PatientLogin extends Component{
         this.props.history.push("/form");
     }
     
-    render(){
+    render = () => {
         return(
             <div>
                 <h1>Hello there!</h1>

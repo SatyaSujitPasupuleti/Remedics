@@ -12,7 +12,7 @@ export default class Profile extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Profile";
 
         // axios.get("more doc info")
@@ -26,7 +26,7 @@ export default class Profile extends Component{
         // .catch(err => console.log(err));
     }
 
-    render(){
+    render = () => {
         return(
             <div className="mainContent">
                 <Navbar />

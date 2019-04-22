@@ -10,7 +10,7 @@ export default class Login extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Login";
     }
 
@@ -32,7 +32,7 @@ export default class Login extends Component{
         // .catch(err => console.log(err));
 }
 
-    render(){
+    render = () => {
         return(
             <div className="login">
                 <h2>Please login.</h2>

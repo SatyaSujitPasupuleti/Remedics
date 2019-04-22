@@ -16,6 +16,7 @@ export default class Todo extends Component{
     }
 
     sendEmail = () => {
+        console.log("Sent email");
         // send email to patient, call from db?
     }
 
@@ -29,15 +30,16 @@ export default class Todo extends Component{
                 complete: (results) => {
                     let allData = results.data;
                     console.log(allData);
-                    axios.post("http://localhost:4000/")
-                    .then(
-                        () => {
-                            console.log("Finished!");
-                            this.sendEmail();
-                            this.props.history.push("/dashboard");
-                        }
-                    )
-                    .catch(err => console.log(err));
+                    // localStorage.setItem("questions", JSON.stringify(allData));
+                    // axios.post("http://localhost:4000", allData)
+                    // .then(
+                    //     () => {
+                    //         console.log("Finished!");
+                    //         this.sendEmail();
+                    //         this.props.history.push("/dashboard");
+                    //     }
+                    // )
+                    // .catch(err => console.log(err));
                 }
             }
         );

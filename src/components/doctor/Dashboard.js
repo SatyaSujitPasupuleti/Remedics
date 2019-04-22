@@ -3,11 +3,11 @@ import Navbar from "./Navbar";
 
 export default class Dashboard extends Component{
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Dashboard";
     }
 
-    render(){
+    render = () => {
         return(
             <div className="mainContent">
                 <Navbar />

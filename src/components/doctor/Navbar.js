@@ -10,7 +10,7 @@ export default class Navbar extends Component{
         }
     }
 
-    // componentDidMount(){
+    // componentDidMount () => {
     //     axios.get("doc info")
     //     .then(
     //         (response) => this.setState({name: response.name})
@@ -34,7 +34,7 @@ export default class Navbar extends Component{
         }
     }
 
-    render(){
+    render = () => {
         return(
             <div>
                 <nav id="side-nav">

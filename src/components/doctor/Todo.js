@@ -10,13 +10,13 @@ export default class Todo extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | To Dos";
         
         // get to do list from DB
     }
 
-    render(){
+    render = () => {
         return(
             <div>
                 <Navbar />

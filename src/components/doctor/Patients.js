@@ -10,7 +10,7 @@ export default class Patients extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Patients";
 
         // axios.post("get patients list")
@@ -24,7 +24,7 @@ export default class Patients extends Component{
         // });
     }
 
-    listPatients(){
+    listPatients = () => {
         if (this.state.patientsList.length < 1){
             return <div>You currently have no patients.</div>
         }
@@ -40,7 +40,7 @@ export default class Patients extends Component{
         )
     }
 
-    render(){
+    render = () => {
         return(
             <div className="mainContent">
                 <Navbar />
