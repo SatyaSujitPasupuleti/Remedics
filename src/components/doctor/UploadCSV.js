@@ -27,7 +27,7 @@ export default class UploadCSV extends Component{
         // file.files[0] grabs the file that was uploaded
         Papa.parse(file.files[0],
             {
-                header: true,
+                header: false,
                 complete: (results) => {
                     let allData = results.data;
                     console.log(allData);
