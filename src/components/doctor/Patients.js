@@ -3,8 +3,8 @@ import Navbar from "./Navbar";
 import axios from "axios";
 
 export default class Patients extends Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             patientsList: []
         }

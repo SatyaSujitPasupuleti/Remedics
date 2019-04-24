@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 
 export default class Todo extends Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
             toDoList: []
         }

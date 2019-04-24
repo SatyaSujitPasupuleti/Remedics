@@ -13,19 +13,19 @@ import Todo from "./components/doctor/Todo";
 import "./App.css";
 
 export default class App extends Component {
-  render() {
+  render = () => {
     return (
       <BrowserRouter>
         <div className="App">
-            <Route exact={true} path="/" component={Home}/>
-            <Route exact={true} path="/dashboard" component={Dashboard} />
-            <Route exact={true} path="/profile" component={Profile} />
-            <Route exact={true} path="/patients" component={Patients} />
-            <Route exact={true} path="/patient_login" component={PatientLogin}/>
-            <Route exact={true} path="/login" component={Login}/>
-            <Route exact={true} path="/form" component={Form}/>
-            <Route exact={true} path="/todo" component={Todo}/>
-            <Route exact={true} path="/upload_questions" component={UploadCSV}/>
+            <Route exact={true} path="/" component={ Home }/>
+            <Route exact={true} path="/dashboard" component={ Dashboard }/>
+            <Route exact={true} path="/profile" component={ Profile }/>
+            <Route exact={true} path="/patients" component={ Patients }/>
+            <Route exact={true} path="/patient_login" component={ PatientLogin }/>
+            <Route exact={true} path="/login" component={ Login }/>
+            <Route exact={true} path="/form" component={ Form }/>
+            <Route exact={true} path="/todo" component={ Todo }/>
+            <Route exact={true} path="/upload_questions" component={ UploadCSV }/>
         </div>
       </BrowserRouter>
     );

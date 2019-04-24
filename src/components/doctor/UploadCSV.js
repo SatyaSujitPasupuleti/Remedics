@@ -3,15 +3,15 @@ import Navbar from "./Navbar";
 import Papa from "papaparse";
 import axios from "axios";
 
-export default class Todo extends Component{
+export default class UploadCSV extends Component{
     constructor(props){
         super(props);
         this.state = {
-            toDoList: []
+            csvFile: undefined
         }
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         document.title = "Remedics | Upload Questions";
     }
 
@@ -24,7 +24,8 @@ export default class Todo extends Component{
         e.preventDefault();
 
         let file = document.getElementById("csv");
-        let parsed = Papa.parse(file.files[0],
+        // file.files[0] grabs the file that was uploaded
+        Papa.parse(file.files[0],
             {
                 header: true,
                 complete: (results) => {
@@ -45,7 +46,7 @@ export default class Todo extends Component{
         );
     }
 
-    render(){
+    render = () => {
         return(
             <div>
                 <Navbar />
