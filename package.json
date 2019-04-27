@@ -9,6 +9,7 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "mongodb": "^3.2.3",
     "papaparse": "^4.6.3",
     "pg": "^7.10.0",
     "react": "^16.8.6",

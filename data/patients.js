@@ -1,59 +1,29 @@
-const Pool = require('pg').Pool;
 const creds = require('./credentials.json');
+const collections = require("./collections");
+const mongo = require("mongodb");
+const patients = collections.patients;
 
-const pool = new Pool({
-    host: creds.host,
-    user: creds.user,
-    password: creds.password,
-    database: creds.database,
-    port: creds.port
-});
 
-async function insertGeneral(info){
-    pool.query(
-        'INSERT INTO test SET ?', 
-        info, 
-        (err, result) =>{
-        if (err){
-            throw err;
-        }
-        console.log('Last ID', result.insertId);
-    
-        return ('Last ID', result.insertId);
-    });
+async function insert(info){
+    const newPatient = {
+        firstName:info.firstName,
+        lastName:info.lastName,
+        email:info.email,
+        dob:info.dob
+    }
+    const patientColl = await patients();
+    const insert = await patientColl.insertOne(newPatient); 
+    const patient = await patientColl.find({_id:insert.insertedId});
+    return patient;
+
 }
 
-async function updateGeneral(info){
-    pool.query(
-        'UPDATE test SET ' + info.column + '= ? Where id = ?',
-        [info.update, info.id],
-        (err, result) =>{
-        if (err){
-            throw err;
-        }
-    
-        console.log(`Rows changed: ${result.changedRows}`);
-    
-        return `Rows changed: ${result.changedRows}`;
-    });
+async function read(info){
+   //TODO need to figure out how to read the questions and answers first 
 }
 
-async function deleteGeneral(info){
-    pool.query(
-        'DELETE FROM test WHERE id = ?', 
-        [info.id],
-        (err, result) =>{
-        if (err){
-            throw err;
-        }
-        console.log(`Deleted ${result.affectedRows}`);
-    
-        return (`Deleted ${result.affectedRows}`);
-    });
-}
 
 module.exports ={
-    insertGeneral,
-    updateGeneral,
-    deleteGeneral
+    insert,
+    read
 }

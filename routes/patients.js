@@ -3,47 +3,24 @@ const router = express.Router();
 const data = require("../data");
 const patientData = data.patients;
 
-router.post('/insert/general', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    const insertGeneral = await patientData.insertGeneral(req.body);
-    res.json(insertGeneral);
+    const insert = await patientData.insert(req.body);
+    res.status(200).send(insert);
   }
   catch (e){
-    res.send(500).json({ route: "get", error: e});
+    res.send(500).json({ route: "post", error: e});
   }
 });
 
-router.post('/update', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const insertGeneral = await patientData.updateGeneral(req.body);
-    res.json(insertGeneral);
+    const read = await patientData.read(req.body);
+    res.json(read);
   }
   catch (e){
     res.send(500).json({ route: "get", error: e});
   }
 })
-
-router.post('/delete', async (req, res) => {
-  try {
-    const insertGeneral = await patientData.deleteGeneral(req.body);
-    res.json(insertGeneral);
-  }
-  catch (e){
-    res.send(500).json({ route: "get", error: e});
-    }
-})
-
-// router.post('/query', async (req, res) => {
-//   con.query(
-//     'SELECT FROM patients where id = ?',
-//     [req.body.id],
-//     (err, result) =>{
-//       if (err){
-//         throw err;
-//       }
-//       console.log('Data received succesfully');
-//       return result
-//   });
-// })
 
 module.exports = router;
