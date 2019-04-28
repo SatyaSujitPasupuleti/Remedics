@@ -29,19 +29,34 @@ export default class Form extends Component {
         // .catch(err => console.log(err));
     }
 
+    submitForm = (e) => {
+        e.preventDefault();
+        // axios.post()
+        // .then(
+        //     () => this.props.history.push("/")
+        // )
+    }
+
     render = () => {
         return(
             <div>
-                {this.state.questions.map(
-                    question =>
-                    <div id="question">
-                        {question.question}
-                        {question.options.map(
-                            options =>
-                            <button id="option" >{options}</button>
-                        )}
-                    </div>
-                )}
+                <form id="mainForm" onSubmit={this.submitForm}>
+                    {this.state.questions.map(
+                        question =>
+                            <div>
+                                <label>
+                                    {/* have the question */}
+                                    {question.question}
+                                    {/* all of the answers as buttons */}
+                                    {question.options.map(
+                                        options => 
+                                        <input type="button" id="option" value={options} />
+                                    )}
+                                </label>
+                            </div>
+                        
+                    )}
+                </form>
             </div>
         )
     }

@@ -15,6 +15,34 @@ export default class UploadCSV extends Component{
         document.title = "Remedics | Upload Questions";
     }
 
+    formatJSON = (data) => {
+        let questionsAnswers = {}
+        // need to ignore the first array, has the titles
+        // pull question type from data[i][0]
+        // pull questions from data[i][1]
+        // pull answers from data[i][2]
+        // pull the doctor's note from data[i][5]
+        let questionCounter = 1
+        for (let i = 1; i < data.length - 1; i++){
+            questionsAnswers[questionCounter] = [];
+            questionsAnswers[questionCounter].push(data[i][0]);
+            questionsAnswers[questionCounter].push(data[i][1]);
+            questionsAnswers[questionCounter].push(data[i][2]);
+            questionsAnswers[questionCounter].push(data[i][5]);
+            questionCounter++;
+        }
+
+        // axios.post("", questionsAnswers)
+        // .then(
+        //     () => {
+        //         console.log("Finished adding!");
+        //         this.sendEmail();
+        //         this.props.history.push("/dashboard");
+        //     }
+        // )
+        // .catch(err => console.log(err));
+    }
+
     sendEmail = () => {
         console.log("Sent email");
         // send email to patient, call from db?
@@ -29,18 +57,7 @@ export default class UploadCSV extends Component{
             {
                 header: false,
                 complete: (results) => {
-                    let allData = results.data;
-                    console.log(allData);
-                    // localStorage.setItem("questions", JSON.stringify(allData));
-                    // axios.post("http://localhost:4000", allData)
-                    // .then(
-                    //     () => {
-                    //         console.log("Finished!");
-                    //         this.sendEmail();
-                    //         this.props.history.push("/dashboard");
-                    //     }
-                    // )
-                    // .catch(err => console.log(err));
+                    this.formatJSON(results.data);
                 }
             }
         );
