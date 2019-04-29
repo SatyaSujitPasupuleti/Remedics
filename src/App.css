@@ -47,6 +47,15 @@ nav {
     color: white;
 }
 
+select {
+    display: block;
+    margin: 40px auto;
+}
+
+select option {
+    display: block;
+}
+
 .table {
     display: table;
 }
