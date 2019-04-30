@@ -6,6 +6,7 @@ export default class Todo extends Component{
     constructor(){
         super();
         this.state = {
+            name: "example",
             toDoList: []
         }
     }
@@ -19,7 +20,7 @@ export default class Todo extends Component{
     render = () => {
         return(
             <div>
-                <Navbar />
+                <Navbar name={this.state.name} />
             </div>
         )
     }

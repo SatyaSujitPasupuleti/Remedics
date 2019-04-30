@@ -7,12 +7,15 @@ export default class UploadCSV extends Component{
     constructor(props){
         super(props);
         this.state = {
+            name: "Example",
             csvFile: undefined
         }
     }
 
     componentDidMount = () => {
         document.title = "Remedics | Upload Questions";
+
+        // retrieve name from db
     }
 
     formatJSON = (data) => {
@@ -23,7 +26,7 @@ export default class UploadCSV extends Component{
         // pull questions from data[i][1]
         // pull answers from data[i][2]
         // pull the doctor's note from data[i][5]
-        
+
         let questionCounter = 1
 
         for (let i = 1; i < data.length - 1; i++){
@@ -69,7 +72,7 @@ export default class UploadCSV extends Component{
     render = () => {
         return(
             <div>
-                <Navbar />
+                <Navbar name={this.state.name} />
                 <h1>Upload your new questions here!</h1>
                 <form onSubmit={this.parseQuestions}>
                     <label>

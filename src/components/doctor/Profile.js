@@ -29,7 +29,7 @@ export default class Profile extends Component{
     render = () => {
         return(
             <div className="mainContent">
-                <Navbar />
+                <Navbar name={this.state.name} />
                 <h1>{this.state.name}</h1>
                 <p>{this.state.practice}</p>
                 <p>{this.state.email}</p>

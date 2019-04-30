@@ -6,6 +6,7 @@ export default class Patients extends Component{
     constructor(){
         super();
         this.state = {
+            name: "Example",
             patientsList: []
         }
     }
@@ -43,7 +44,7 @@ export default class Patients extends Component{
     render = () => {
         return(
             <div className="mainContent">
-                <Navbar />
+                <Navbar name={this.state.name}/>
                 <h1>Your patients:</h1>
                 {this.listPatients()}
             </div>

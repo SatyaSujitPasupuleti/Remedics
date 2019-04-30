@@ -2,10 +2,10 @@ import React, { Component } from "react";
 // import axios from "axios";
 
 export default class Navbar extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            name: "Jake",
+            name: props.name,
             showMenu: false
         }
     }
