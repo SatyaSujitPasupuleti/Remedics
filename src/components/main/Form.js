@@ -6,6 +6,10 @@ export default class Form extends Component {
         super();
 
         this.state = {
+            firstName: "",
+            lastName: "",
+            dob: "",
+            email: "",
             questions: {
                 1: [ "Single Select ", "What is the reason for today’s consultation?", "Follow up|Physical|Acute Visit", "Patient is Here today for a: "],
                 2: ["multiselect", "Please select each of the General symptoms that applies to you:", "Fever|Chills|Sweat|Fatigue|Weight Loss|Weight Gain", "General Symptoms:"],
@@ -43,6 +47,8 @@ export default class Form extends Component {
         // .then(
         //     () => this..history.push("/")
         // )
+
+        document.body = "Thank you for participating! You will know your results shortly."
     }
 
     isMultiple = (multiple) => {
@@ -64,10 +70,29 @@ export default class Form extends Component {
         this.setState({ selections: updateAnswer });
     }
 
+    handleInput = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
     render = () => {
         return(
             <div>
+                <h1>Hello there!</h1>
+                <p>Remedics would like you to answer a few questions about yourself. It will help us with properly diagnosing the issues that you may have.</p>
+                <p>Please enter some information below. We need to see if you are already with us. You may answer the questions after you are done.</p>
                 <form id="mainForm" onSubmit={this.submitForm}>
+                    <label>
+                        First Name: <input type="text" value={this.state.firstName} name="firstName" onChange={this.handleInput} required/>
+                    </label>
+                    <label>
+                        Last Name: <input type="text" value={this.state.lastName} name="lastName" onChange={this.handleInput} required/>
+                    </label>
+                    <label>
+                        Date of Birth: <input type="text" value={this.state.dob} name="dob" pattern="\d{4}[-]\d{2}[-]\d{2}" onChange={this.handleInput} placeholder="YYYY-MM-DD" maxLength="10" required/>
+                    </label>
+                    <label>
+                        Email: <input type="text" value={this.state.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onChange={this.handleInput} required/>
+                    </label>
                     {Object.keys(this.state.questions).map(
                         (questionNo) =>
                             <label key={questionNo}>

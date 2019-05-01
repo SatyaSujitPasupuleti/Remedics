@@ -39,7 +39,7 @@ export default class Navbar extends Component{
             <div>
                 <nav id="side-nav">
                     <div id="welcomeBox"></div>
-                    <a href="/todo">To dos</a>
+                    <a href="/patient_answers">Patient & Answers</a>
                     <a href="/upload_questions">Questions</a>
                 </nav>
                 <nav id="top-nav">
