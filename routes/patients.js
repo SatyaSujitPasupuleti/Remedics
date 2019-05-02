@@ -3,7 +3,7 @@ const router = express.Router();
 const data = require("../data");
 const patientData = data.patients;
 
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const insert = await patientData.insert(req.body);
     res.status(200).send(insert);
@@ -13,9 +13,20 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/', async (req, res) => {
+router.put('/answers', async (req, res) => {
   try {
     const attach = await patientData.addAnswers(req.body);
+    res.status(200).send(attach);
+  }
+  catch (e){
+    console.log(e);
+    res.status(500).send({ route: "put", error: e});
+  }
+});
+
+router.put('/questions', async (req, res) => {
+  try {
+    const attach = await patientData.addQuestions(req.body);
     res.status(200).send(attach);
   }
   catch (e){
