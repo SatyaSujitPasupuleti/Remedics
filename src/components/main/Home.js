@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Home extends Component{
 
     doctor = () => {
-        this.props.history.push("/login");
+        this.props.history.push("/dashboard");
     }
 
     patient = () => {
