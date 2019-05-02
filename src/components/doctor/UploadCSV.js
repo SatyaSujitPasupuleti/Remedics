@@ -4,18 +4,9 @@ import Papa from "papaparse";
 import axios from "axios";
 
 export default class UploadCSV extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            name: "Example",
-            csvFile: undefined
-        }
-    }
 
     componentDidMount = () => {
         document.title = "Remedics | Upload Questions";
-
-        // retrieve name from db
     }
 
     formatJSON = (data) => {
@@ -38,20 +29,14 @@ export default class UploadCSV extends Component{
             questionCounter++;
         }
 
-        // axios.post("", questionsAnswers)
-        // .then(
-        //     () => {
-        //         console.log("Finished adding!");
-        //         this.sendEmail();
-        //         this.props.history.push("/dashboard");
-        //     }
-        // )
-        // .catch(err => console.log(err));
-    }
-
-    sendEmail = () => {
-        console.log("Sent email");
-        // send email to patient, call from db?
+        axios.post("http://localhost:4000/", questionsAnswers)
+        .then(
+            () => {
+                console.log("Finished adding!");
+                this.props.history.push("/dashboard");
+            }
+        )
+        .catch(err => console.log(err));
     }
 
     parseQuestions = (e) => {
@@ -72,7 +57,7 @@ export default class UploadCSV extends Component{
     render = () => {
         return(
             <div>
-                <Navbar name={this.state.name} />
+                <Navbar name="Example" />
                 <h1>Upload your new questions here!</h1>
                 <form onSubmit={this.parseQuestions}>
                     <label>
