@@ -6,11 +6,11 @@ const ServerRouter = require('./routes');
 const pages =  express.static(__dirname + "/public");
 const cors = require("cors");
 
-app.use("/", pages);
-// app.use(cors());
-app.use(bodyParser.json());
+app.use(cors());
 app.options('*', cors())
-ServerRouter(app);
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/", pages);
+ServerRouter(app);
 
 app.listen(process.env.PORT || PORT);

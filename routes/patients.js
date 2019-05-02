@@ -4,16 +4,8 @@ const data = require("../data");
 const patientData = data.patients;
 const cors = require("cors")
 
-// app.use((req, res, next)  =>{
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 
 router.post('/create', cors(), async (req, res) => {
-  // res.setHeader('Access-Control-Allow-Origin', '*');
-  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype');
   try {
     const insert = await patientData.insert(req.body);
     res.status(200).send(insert);
@@ -34,16 +26,10 @@ router.put('/answers', async (req, res) => {
   }
 });
 
-router.put('/questions', cors(), async (req, res) => {
-  // res.setHeader('Access-Control-Allow-Origin', '*');
-  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype');
+router.put('/questions', async (req, res) => {
   try {
     const attach = await patientData.addQuestions(req.body);
     res.status(200).send(attach);
-
-    // console.log(req.body);
-    // res.status(200).send(req.body);
   }
   catch (e){
     console.log(e);
