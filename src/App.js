@@ -4,7 +4,6 @@ import Home from "./components/main/Home";
 import Login from "./components/doctor/Login";
 import Dashboard from "./components/doctor/Dashboard";
 import Profile from "./components/doctor/Profile";
-// import { PrivateRoute } from "./components/PrivateRoute";
 import Form from "./components/main/Form";
 import UploadCSV from "./components/doctor/UploadCSV";
 import PatientAnswers from "./components/doctor/PatientAnswers";

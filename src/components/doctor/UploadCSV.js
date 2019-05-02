@@ -29,7 +29,7 @@ export default class UploadCSV extends Component{
             questionCounter++;
         }
 
-        axios.post("http://localhost:4000/", questionsAnswers)
+        axios.post("http://localhost:4000/questions", questionsAnswers)
         .then(
             () => {
                 console.log("Finished adding!");

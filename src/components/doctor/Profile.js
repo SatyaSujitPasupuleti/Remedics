@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import axios from "axios";
 
 export default class Profile extends Component{
     constructor(){
@@ -14,16 +13,6 @@ export default class Profile extends Component{
 
     componentDidMount = () => {
         document.title = "Remedics | Profile";
-
-        // axios.get("more doc info")
-        // .then(
-        //     (response) => this.setState({
-        //         name: response.name,
-        //         practice: response.practice,
-        //         email: response.email
-        //     })
-        // )
-        // .catch(err => console.log(err));
     }
 
     render = () => {

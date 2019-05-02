@@ -18,25 +18,27 @@ export default class Form extends Component {
     componentDidMount = () => {
         document.title = "Remedics | Questionnaire";
 
-        // axios.get("/")
-        // .then(
-        //     (results) => {
-        //         this.setState(
-        //             { questions: results }
-        //         )
-        //     }
-        // )
-        // .catch(err => console.log(err));
+        axios.get("/")
+        .then(
+            (results) => {
+                this.setState(
+                    { questions: results }
+                )
+            }
+        )
+        .catch(err => console.log(err));
     }
 
     submitForm = (e) => {
         e.preventDefault();
-        // axios.post()
-        // .then(
-        //     () => this..history.push("/")
-        // )
-
-        document.body = "Thank you for participating! You will know your results shortly."
+        axios.put("http://localhost:4000/answers")
+        .then(
+            () => {
+                this.props.history.push("/");
+                document.body = "Thank you for participating! You will know your results shortly.";
+            } 
+        )
+        
     }
 
     isMultiple = (multiple) => {
