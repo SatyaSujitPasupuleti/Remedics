@@ -26,14 +26,13 @@ export default class PatientAnswers extends Component{
             <div>
                 <Navbar name={this.state.name} />
                 {this.state.patients.map(
-                    patient => {
+                    patient =>
                         <div>
                             {console.log(patient)}
                             This is the patient:
                         </div>
-                        
-                    }
-                )}
+                    )
+                }
             </div>
         )
     }

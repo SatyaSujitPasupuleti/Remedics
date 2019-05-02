@@ -7,8 +7,9 @@ const pages =  express.static(__dirname + "/public");
 const cors = require("cors");
 
 app.use("/", pages);
+// app.use(cors());
 app.use(bodyParser.json());
-app.use(cors());
+app.options('*', cors())
 ServerRouter(app);
 app.use(bodyParser.urlencoded({ extended: true }));
 
