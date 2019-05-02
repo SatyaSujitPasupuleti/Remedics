@@ -8,7 +8,8 @@ async function insert(info){
         lastName:info.lastName,
         email:info.email,
         dob:info.dob,
-        selections: {}
+        selections: {},
+        questionsAnswers: {}
     }
     const patientColl = await patients();
     const insert = await patientColl.insertOne(newPatient); 
@@ -25,6 +26,15 @@ async function addAnswers(info){
     return update;
 }
 
+async function addQuestions(info){
+    const patientColl = await patients();
+    let update = await patientColl.updateOne(
+        {email:info.email},
+        {$set: {questionsAnswers:info.questionsAnswers}}
+    );
+    return update;
+}
+
 async function read(info){
     const patientColl = await patients();
     const patientArray = await patientColl.find({}).toArray();
@@ -35,5 +45,6 @@ async function read(info){
 module.exports ={
     insert,
     read,
-    addAnswers
+    addAnswers,
+    addQuestions
 }
