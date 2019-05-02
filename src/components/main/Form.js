@@ -38,13 +38,13 @@ export default class Form extends Component {
     submitForm = (e) => {
         e.preventDefault();
         let allFields = {...this.state}
-        axios.put("http://localhost:4000/create", allFields)
+        axios.post("http://localhost:4000/create", allFields)
         .then(
-            () => {
-                document.body = "Thank you for participating! You will know your results shortly.";
+            (response) => {
                 this.props.history.push("/");
             } 
         )
+        .catch(err => console.log(err));
         
     }
 

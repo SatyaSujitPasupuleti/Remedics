@@ -5,8 +5,30 @@ import axios from "axios";
 
 export default class UploadCSV extends Component{
 
+    constructor(){
+        super();
+        this.state = {
+            email: ""
+        }
+    }
+
     componentDidMount = () => {
         document.title = "Remedics | Upload Questions";
+    }
+
+    submitForm = (email, questionsAnswers) => {
+        let body = {
+            email: email,
+            questionsAnswers: questionsAnswers
+        }
+        axios.post("http://localhost:4000/questions", body)
+        .then(
+            () => {
+                console.log("Finished adding!");
+                this.props.history.push("/dashboard");
+            }
+        )
+        .catch(err => console.log(err));
     }
 
     formatJSON = (data) => {
@@ -29,14 +51,7 @@ export default class UploadCSV extends Component{
             questionCounter++;
         }
 
-        axios.post("http://localhost:4000/questions", questionsAnswers)
-        .then(
-            () => {
-                console.log("Finished adding!");
-                this.props.history.push("/dashboard");
-            }
-        )
-        .catch(err => console.log(err));
+        this.submitForm(this.state.email, questionsAnswers);
     }
 
     parseQuestions = (e) => {
@@ -54,12 +69,19 @@ export default class UploadCSV extends Component{
         );
     }
 
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
     render = () => {
         return(
             <div>
                 <Navbar name="Example" />
                 <h1>Upload your new questions here!</h1>
                 <form onSubmit={this.parseQuestions}>
+                    <label>
+                        <input type="text" name="email" onChange={this.handleChange} />
+                    </label>
                     <label>
                         <input type="file" id="csv" name="csv" accept=".csv" required/>
                     </label>

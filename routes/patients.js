@@ -2,10 +2,8 @@ const express = require('express');
 const router = express.Router();
 const data = require("../data");
 const patientData = data.patients;
-const cors = require("cors")
 
-
-router.post('/create', cors(), async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const insert = await patientData.insert(req.body);
     res.status(200).send(insert);

@@ -14,7 +14,7 @@ export default class PatientAnswers extends Component{
     componentDidMount = () => {
         document.title = "Remedics | To Dos";
         
-        axios.get("http://localhost:4000/")
+        axios.get("http://localhost:4000/getall")
         .then(
             (response) => this.setState({ patients: response })
         )

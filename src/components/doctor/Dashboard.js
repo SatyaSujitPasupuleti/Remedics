@@ -11,7 +11,7 @@ export default class Dashboard extends Component{
         return(
             <div className="mainContent">
                 <Navbar name="Example"/>
-                <h1>Welcome to the Dashboard!</h1>
+                <h1>Welcome to Remedics!</h1>
                 <p>Check out your profile, look at the questions, or check what you need to do!</p>
             </div>
         )

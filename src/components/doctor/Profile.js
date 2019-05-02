@@ -5,9 +5,9 @@ export default class Profile extends Component{
     constructor(){
         super();
         this.state = {
-            name: "Example",
-            practice: "Example",
-            email: "Example",
+            name: "Dr. Satya Pasupuleti",
+            practice: "Hoboken University Center",
+            email: "spasupuleti@stevens.edu",
         }
     }
 

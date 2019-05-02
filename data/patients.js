@@ -1,6 +1,6 @@
 const collections = require("./collections");
 const patients = collections.patients;
-
+const fs = require("fs");
 
 async function insert(info){
     const newPatient = {
@@ -11,18 +11,22 @@ async function insert(info){
         selections: {},
         questionsAnswers: {}
     }
-    const patientColl = await patients();
-    const insert = await patientColl.insertOne(newPatient); 
-    const patient = await patientColl.find({_id:insert.insertedId});
-    return patient;
+    const writtenFile = fs.writeFile("./data/questions.txt", newPatient, (err) => {
+        if (err){
+            throw err;
+        }
+    })
+    return newPatient;
 }
 
 async function addAnswers(info){
-    const patientColl = await patients();
-    let update = await patientColl.updateOne(
-        {email:info.email},
-        {$set: {selections:info.selections}}
-    );
+    let patientArray = fs.readFile("./data/questions.txt", (err) => {
+        if (err){
+            throw err;
+        }
+    })
+
+    console.log
     return update;
 }
 
@@ -42,8 +46,11 @@ async function readOne(info){
 }
 
 async function read(info){
-    const patientColl = await patients();
-    const patientArray = await patientColl.find({}).toArray();
+    const patientArray = fs.readFile("./data/questions.txt", "utf8", (err) => {
+        if (err){
+            throw err;
+        }
+    })
     return patientArray;
 }
 
