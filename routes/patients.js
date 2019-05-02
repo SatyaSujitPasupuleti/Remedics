@@ -9,17 +9,28 @@ router.post('/', async (req, res) => {
     res.status(200).send(insert);
   }
   catch (e){
-    res.send(500).json({ route: "post", error: e});
+    res.status(500).send();
+  }
+});
+
+router.put('/', async (req, res) => {
+  try {
+    const attach = await patientData.addAnswers(req.body);
+    res.status(200).send(attach);
+  }
+  catch (e){
+    console.log(e);
+    res.status(500).send({ route: "put", error: e});
   }
 });
 
 router.get('/', async (req, res) => {
   try {
     const read = await patientData.read(req.body);
-    res.json(read);
+    res.status(200).send(read);
   }
   catch (e){
-    res.send(500).json({ route: "get", error: e});
+    res.status(500).json({ route: "get", error: e});
   }
 })
 

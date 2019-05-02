@@ -15,4 +15,5 @@ const getCollectionFn = collection => {
 
 module.exports = {
   patients: getCollectionFn("patients"),
+  questions: getCollectionFn("questions")
 }
