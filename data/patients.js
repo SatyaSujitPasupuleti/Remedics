@@ -35,6 +35,12 @@ async function addQuestions(info){
     return update;
 }
 
+async function readOne(info){
+    const patientcoll = await patients();
+    const patient = await patientcoll.findOne({email:info.email});
+    return patient;
+}
+
 async function read(info){
     const patientColl = await patients();
     const patientArray = await patientColl.find({}).toArray();
@@ -45,6 +51,7 @@ async function read(info){
 module.exports ={
     insert,
     read,
+    readOne,
     addAnswers,
     addQuestions
 }
