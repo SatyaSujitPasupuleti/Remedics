@@ -35,7 +35,17 @@ router.put('/questions', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/getone', async (req, res) => {
+  try {
+    const read = await patientData.readOne(req.body);
+    res.status(200).send(read);
+  }
+  catch (e){
+    res.status(500).json({ route: "get", error: e});
+  }
+})
+
+router.get('/getall', async (req, res) => {
   try {
     const read = await patientData.read(req.body);
     res.status(200).send(read);
