@@ -20,7 +20,7 @@ a {
 
 p {
     font-style: "Apercu";
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -165,4 +165,12 @@ select option {
 #bodyArea button{
     width: 10%;
     margin: 10px;
+}
+
+#info {
+    text-align: left;
+    padding-left: 20%;
+    padding-top: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
