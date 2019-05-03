@@ -47,8 +47,8 @@ router.get('/getone', async (req, res) => {
 
 router.get('/getall', async (req, res) => {
   try {
-    const read = await patientData.read(req.body);
-    res.status(200).send(read);
+    let getall = await patientData.read(req.body);
+    res.status(200).send(getall);
   }
   catch (e){
     res.status(500).json({ route: "get", error: e});

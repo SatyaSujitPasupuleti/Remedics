@@ -8,15 +8,12 @@ async function insert(info){
         lastName:info.lastName,
         email:info.email,
         dob:info.dob,
-        selections: {},
-        questionsAnswers: {}
+        selections: info.selections,
+        questions: info.questions
     }
-    let data = JSON.stringify(newPatient);
-    fs.writeFileSync("./data/questions.json", data, (err) => {
-        if (err){
-            throw err;
-        }
-    });
+    let patient = JSON.stringify(newPatient, null, 2);
+
+    fs.writeFile("./data/questions.json", patient);
     return newPatient;
 }
 
@@ -47,12 +44,9 @@ async function readOne(info){
 }
 
 async function read(info){
-    const patientArray = fs.readFile("./data/questions.txt", "utf8", (err) => {
-        if (err){
-            throw err;
-        }
-    })
-    return patientArray;
+    let data = fs.readFileSync("./data/questions.json");
+    let patients = JSON.parse(data);
+    return patients;
 }
 
 
