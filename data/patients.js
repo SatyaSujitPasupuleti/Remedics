@@ -11,11 +11,12 @@ async function insert(info){
         selections: {},
         questionsAnswers: {}
     }
-    const writtenFile = fs.writeFile("./data/questions.txt", newPatient, (err) => {
+    let data = JSON.stringify(newPatient);
+    fs.writeFileSync("./data/questions.json", data, (err) => {
         if (err){
             throw err;
         }
-    })
+    });
     return newPatient;
 }
 
