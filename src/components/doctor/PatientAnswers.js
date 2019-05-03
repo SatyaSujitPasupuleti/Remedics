@@ -20,7 +20,7 @@ export default class PatientAnswers extends Component{
     }
 
     componentDidMount = () => {
-        document.title = "Remedics | To Dos";
+        document.title = "Remedics | Patients";
 
         axios.get("http://localhost:4000/getall")
         .then(
