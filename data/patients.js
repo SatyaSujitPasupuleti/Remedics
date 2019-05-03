@@ -8,8 +8,8 @@ async function insert(info){
         lastName:info.lastName,
         email:info.email,
         dob:info.dob,
-        selections: {},
-        questionsAnswers: {}
+        selections: info.selections,
+        questionsAnswers: info.questions
     }
     let data = JSON.stringify(newPatient);
     fs.writeFileSync("./data/questions.json", data, (err) => {
